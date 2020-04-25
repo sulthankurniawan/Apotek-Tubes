@@ -20,27 +20,28 @@ class Barang extends CI_Model{
             return false;
         }
     }
+
     public function lihat_barang($table)
 	{
         $data = $this->db->get($table);
 		return $data->result_array();
     }
     
-    public function lihat_barang_id($table,$id){
-        $this->db->where('id',$id);
+    public function lihat_barang_id($table,$id_barang){
+        $this->db->where('id_barang',$id_barang);
         $data = $this->db->get($table);
 		return $data->result_array();
     }
 
-    public function hapus_barang($id,$table)
+    public function hapus_barang($id_barang,$table)
 	{
 		//use query builder to delete data based on id 
-        $this->db->where('id',$id);
+        $this->db->where('id_barang',$id_barang);
 		return $this->db->delete($table);
     }
     
-    function edit_barang($table,$id,$data){
-        $this->db->where('id', $id);
+    function edit_barang($table,$id_barang,$data){
+        $this->db->where('id_barang', $id_barang);
         $update = $this->db->update($table,$data);
 
         if ($update){
