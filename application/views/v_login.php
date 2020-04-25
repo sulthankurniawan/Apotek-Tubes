@@ -1,6 +1,4 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en"></html>
-
 <html>
     <head>
         <meta charset="utf-8">
@@ -13,8 +11,7 @@
 
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
     </head>
-
-    <body class='bg-primary'>
+	<body class='bg-primary'>
         <center>
             <div class="col-lg-6">
                 <div class="card" style="margin-top:100px">
