@@ -26,19 +26,19 @@
                         <input type="text" placeholder="cari barang" class='form-control' id="search">    
                     </li>
                     <li class="nav-item">
-						<a href="" class="nav-link">Akun</a>
+						<a href="/admin_registrasi.php" class="nav-link">Registrasi</a>
 					</li>
 					<li class="nav-item">
-						<a href="" class="nav-link">Akun</a>
+						<a href="/admin_akun.php" class="nav-link">Akun</a>
 					</li>
 					<li class="nav-item">
-						<a href="" class="nav-link">Barang</a>
+						<a href="/admin_barang.php" class="nav-link">Barang</a>
                     </li>
                     <li class="nav-item">
-						<a href="" class="nav-link">Permintaan</a>
+						<a href="/admin_permintaan.php" class="nav-link">Permintaan</a>
 					</li>
 					<li class="nav-item">
-						<a href="" class="nav-link">Keluar</a>
+						<a href="/v_login.php" class="nav-link">Keluar</a>
 					</li>	
 				</ul>
 			</div>
