@@ -2,32 +2,9 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Login extends CI_Controller{
-    function __construct(){
-        parent::__construct();      
-            $username = $this->input->post('username');
-            $password = $this->input->post('password');
-            $where = array(
-                'username' => $username,
-                'password' => $password
-            );
-            $cek = $this->db->where('user',$where);
-            if($cek > 0){
- 
-                $data_session = array(
-                    'nama' => $username,
-                    'status' => 'login'
-                );
- 
-            $this->session->set_userdata($data_session);
- 
-            redirect(base_url('v_login'));
- 
-        }else{
-            echo "Username dan password salah !";
-        }
-    }
+    
 	function index(){
-		 if ($this->input->post('login')){
+		 if ($this->input->post('Login')){
 
             $this->form_validation->set_rules('username', 'username', 'trim|required');
             $this->form_validation->set_rules('password', 'Password', 'trim|required|callback_check_database');
@@ -55,7 +32,7 @@ class Login extends CI_Controller{
 	function check_database($password)
     {
 
-        $username = $this->input->post('username');
+         $username = $this->input->post('akun');
 
 
         $result = $this->Model_login->user($username, $password);
