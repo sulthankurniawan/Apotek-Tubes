@@ -1,40 +1,58 @@
-<?php
+<?php 
 
-class M_admin extends CI_Model
-{
-    private $_table = "akun";
+class admin extends CI_Model{
+	function login_admin($username, $password){
+		$this->db->where('username', $username);
+		$this->db->where('password', $password);
+		$result = $this->db->get('admin_account');
+		if($result->num_rows()==1){
+			return $result->row(0);
+		}else{
+			return false;
+		}
+	}
+	function tambah_barang($table, $data){
+		$tambah = $this->db->insert($table,$data);
+		if($add){
+			return true;
+		} else {
+			return false;
+		}
+	}
+	public function getbarang($table){
+		$data = $this->db->get($table);
+		return $data->result_array();
+	}
 
-    public function doLogin(){
-		$post = $this->input->post();
+	public function getbarangByid($table,$id){
+		$this->db->where('id',$id);
+		$data = $this->db->get($table);
+		return $data->result_array();
+	}
 
-        // cari user berdasarkan email dan username
-        $this->db->where('status', 'admin');
-        $admin = $this->db->get($this->_table)->row();
+	public function hapusbarang($id,$table){
+		$this->db->where('id',$id);
+		$update = $this->db->update($table,$data);
 
-        // jika user terdaftar
-        if($admin){
-            // periksa password-nya
-            $isPasswordTrue = password_verify($post["password"], $admin->password);
-            // jika password benar
-            if($isPasswordTrue){ 
-                // login sukses yay!
-                $this->session->set_userdata(['user_logged' => $admin]);
-                $this->_updateLastLogin($admin->admin_id);
-                return true;
-            }
-        }
-        
-        // login gagal
-		return false;
-    }
-
-    public function isNotLogin(){
-        return $this->session->userdata('user_logged') === null;
-    }
-
-    private function _updateLastLogin($admin_id){
-        $sql = "UPDATE {$this->_table} SET last_login=now() WHERE user_id={$admin_id}";
-        $this->db->query($sql);
-    }
-
+		if($update){
+			return true;
+		}else{
+			return false;
+		}
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ ?>
