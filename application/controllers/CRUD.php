@@ -1,0 +1,1 @@
+class crud extend CI_Controller
