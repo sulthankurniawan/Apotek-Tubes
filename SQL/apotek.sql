@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 25 Apr 2020 pada 10.41
+-- Waktu pembuatan: 25 Apr 2020 pada 11.55
 -- Versi server: 10.1.38-MariaDB
 -- Versi PHP: 7.3.3
 
@@ -44,7 +44,21 @@ CREATE TABLE `akun` (
 --
 
 INSERT INTO `akun` (`id_akun`, `id_keranjang`, `nama_rs`, `username`, `password`, `alamat_rs`, `email_rs`, `status`) VALUES
-(1, 0, '-', 'admin', 'admin123', 'administrator', 'admin@mail.com', 'admin');
+(4, 1, '-', 'admin', 'admin', 'pusat', 'admin@mail.go.id', 'admin');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `barang`
+--
+
+CREATE TABLE `barang` (
+  `id_barang` int(20) NOT NULL,
+  `nama_barang` varchar(50) NOT NULL,
+  `kategori` varchar(20) NOT NULL,
+  `deskripsi` varchar(200) NOT NULL,
+  `gambar` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -60,6 +74,13 @@ CREATE TABLE `keranjang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
+-- Dumping data untuk tabel `keranjang`
+--
+
+INSERT INTO `keranjang` (`id_keranjang`, `id_barang`, `kuantitas_barang`, `status`) VALUES
+(1, 0, 0, 'selesai');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -71,10 +92,17 @@ ALTER TABLE `akun`
   ADD KEY `id_keranjang` (`id_keranjang`);
 
 --
+-- Indeks untuk tabel `barang`
+--
+ALTER TABLE `barang`
+  ADD PRIMARY KEY (`id_barang`);
+
+--
 -- Indeks untuk tabel `keranjang`
 --
 ALTER TABLE `keranjang`
-  ADD PRIMARY KEY (`id_keranjang`);
+  ADD PRIMARY KEY (`id_keranjang`),
+  ADD KEY `id_barang` (`id_barang`);
 
 --
 -- AUTO_INCREMENT untuk tabel yang dibuang
@@ -84,13 +112,29 @@ ALTER TABLE `keranjang`
 -- AUTO_INCREMENT untuk tabel `akun`
 --
 ALTER TABLE `akun`
-  MODIFY `id_akun` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_akun` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT untuk tabel `barang`
+--
+ALTER TABLE `barang`
+  MODIFY `id_barang` int(20) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT untuk tabel `keranjang`
 --
 ALTER TABLE `keranjang`
-  MODIFY `id_keranjang` int(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_keranjang` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+--
+
+--
+-- Ketidakleluasaan untuk tabel `akun`
+--
+ALTER TABLE `akun`
+  ADD CONSTRAINT `fk_akun` FOREIGN KEY (`id_keranjang`) REFERENCES `keranjang` (`id_keranjang`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
