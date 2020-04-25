@@ -28,7 +28,7 @@
                                     <input type="email" id="password" name="password" class="form-control" placeholder="Password">
                                 </div>
                             <div class="form-actions form-group" style="margin-top:10px">
-                                <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+                                <button type="submit" class="btn btn-primary btn-sm">Login</button>
                             </div>
                         </form>
                     </div>
