@@ -2,11 +2,32 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Login extends CI_Controller{
+    function __construct(){
+        parent::__construct();      
+            $username = $this->input->post('username');
+            $password = $this->input->post('password');
+            $where = array(
+                'username' => $username,
+                'password' => $password
+            );
+            $cek = $this->db->where('user',$where);
+            if($cek > 0){
  
-	$table = 'akun';
-
+                $data_session = array(
+                    'nama' => $username,
+                    'status' => 'login'
+                );
+ 
+            $this->session->set_userdata($data_session);
+ 
+            redirect(base_url('v_login'));
+ 
+        }else{
+            echo "Username dan password salah !";
+        }
+    }
 	function index(){
-		 if ($this->input->post('Login')){
+		 if ($this->input->post('login')){
 
             $this->form_validation->set_rules('username', 'username', 'trim|required');
             $this->form_validation->set_rules('password', 'Password', 'trim|required|callback_check_database');
@@ -17,7 +38,7 @@ class Login extends CI_Controller{
             }
             else
             {
-                redirect('v_login');
+                redirect('v_home');
 
             }
 
@@ -29,15 +50,15 @@ class Login extends CI_Controller{
     }
 
 
-	}
+
 
 	function check_database($password)
     {
 
-        $username = $this->input->post('akun');
+        $username = $this->input->post('username');
 
 
-        $result = $this->Model_login->user($id_akun, $password);
+        $result = $this->Model_login->user($username, $password);
 
         if($result)
         {
@@ -45,15 +66,15 @@ class Login extends CI_Controller{
             foreach($result as $row)
             {
                 $sess_array = array(
-                    `id_akun` => $row -> id_akun,
+                    #`id_akun` => $row -> id_akun,
  					#`id_keranjang` $row -> id_keranjang,
   					#`nama_rs` $row -> nama_rs,
-  					#`username` $row -> username,
+  					`username` => $row -> username,
  	 				`password` => $row -> password,
   					#`alamat_rs` $row -> alamat_rs,
   					#`email_rs`$row -> email_rs,
                 );
-                $this->session->set_userdata('logged_in', $sess_array);
+                $this->session->set_userdata('Login', $sess_array);
             }
             return TRUE;
         }
@@ -63,34 +84,8 @@ class Login extends CI_Controller{
             return false;
         }
     }
+}
 
- 
-	
-	function aksi_login(){
-		$username = $this->input->post('username');
-		$password = $this->input->post('password');
-		$where = array(
-			'username' => $username,
-			'password' => md5($password)
-			);
-		$cek = $this->akun->cek_login("admin",$where)->num_rows();
-		if($cek > 0){
- 
-			$data_session = array(
-				'nama' => $username,
-				'status' => "login"
-				);
- 
-			$this->session->set_userdata($data_session);
- 
-			redirect(base_url("adminController"));
- 
-		}else{
-			echo "Username dan password salah !";
-		}
-	}
- 
-		
 	#function logout(){
 	#	$this->session->sess_destroy();
 	#	redirect(base_url('login'));

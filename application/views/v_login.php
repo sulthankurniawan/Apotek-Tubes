@@ -1,3 +1,11 @@
+<?php
+
+if(isset($_SESSION['login_user'])){
+header("location: v_home.php");
+}
+?>
+
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -25,10 +33,10 @@
                             </div>
                             <div class="form-group">
                                 <div class="input-group">
-                                    <input type="email" id="password" name="password" class="form-control" placeholder="Password">
+                                    <input type="password" id="password" name="password" class="form-control" placeholder="Password">
                                 </div>
                             <div class="form-actions form-group" style="margin-top:10px">
-                                <button type="submit" class="btn btn-primary btn-sm">Login</button>
+                                <button type="submit" class="btn btn-primary btn-sm">Login</button> 
                             </div>
                         </form>
                     </div>
