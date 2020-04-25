@@ -1,6 +1,8 @@
 <?php
 
 class Akun extends CI_Model{
+    
+    $table = 'Akun';
 
     function registrasi($table, $data){
         $daftar = $this->db->insert($table, $data);
@@ -44,6 +46,13 @@ class Akun extends CI_Model{
         }else{
         return FALSE;
         }
+    }
+
+    public function hapus_akun($id,$table)
+	{
+		//use query builder to delete data based on id 
+        $this->db->where('id',$id);
+		return $this->db->delete($table);
     }
 
 }

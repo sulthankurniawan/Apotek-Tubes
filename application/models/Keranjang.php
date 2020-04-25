@@ -1,14 +1,13 @@
 <?php
 
-class Barang extends CI_Model{
+class Keranjang extends CI_Model{
 
-    private $table = 'barang';
+    private $table = 'keranjang';
 
+    public $id_keranjang;
     public $id_barang;
-    public $nama_barang;
-    public $kategori;
-    public $deskripsi;
-    public $gambar = 'default.png';
+    public $kuantitas_barang;
+    public $status;
 
 
     function tambah_barang($table,$data){
