@@ -1,8 +1,9 @@
 <?php
+defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Akun extends CI_Model{
     
-    $table = 'Akun';
+    $table = 'akun';
 
     function registrasi($table, $data){
         $daftar = $this->db->insert($table, $data);

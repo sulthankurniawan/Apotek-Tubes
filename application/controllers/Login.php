@@ -3,16 +3,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Login extends CI_Controller{
  
-	function __construct(){
-		parent::__construct();		
-		$this->load->model('Akun');
- 
-	}
- 
-	function index(){
-		 if ($this->input->post('tombol_login')){
+	$table = 'akun';
 
-            $this->form_validation->set_rules('id_akun', 'id_akun', 'trim|required');
+	function index(){
+		 if ($this->input->post('Login')){
+
+            $this->form_validation->set_rules('username', 'username', 'trim|required');
             $this->form_validation->set_rules('password', 'Password', 'trim|required|callback_check_database');
 
             if($this->form_validation->run() == FALSE)
@@ -38,7 +34,7 @@ class Login extends CI_Controller{
 	function check_database($password)
     {
 
-        $username = $this->input->post('id_akun');
+        $username = $this->input->post('akun');
 
 
         $result = $this->Model_login->user($id_akun, $password);
