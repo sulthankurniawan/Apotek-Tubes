@@ -13,35 +13,42 @@
 </head>
 
 <body>	
+    <?php if (empty($event)) : ?>
+        <div class="alert alert-danger" role="alert">
+            Data tidak ditemukan
+        </div>
+    <?php endif; ?>
     <table class="table table-striped">
-    <thead>
-        <tr>
-        <th scope="col">No</th>
-        <th scope="col">Id</th>
-        <th scope="col">Nama RS / Puskesmas</th>
-        <th scope="col">Nama admin setempat</th>
-        <th scope="col">Username</th>
-        <th scope="col">Password</th>
-        <th scope="col">Alamat</th>
-        <th scope="col">Email RS</th>
-        <th scope="col">AKSI</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-        <td>Mark</td>
-        <td>Mark</td>
-        <td>Mark</td>
-        <td>Mark</td>
-        <td>
-            <button type='button' class='btn btn-danger'>Hapus</button>
-        </td>
-        </tr>
-    </tbody>
+        <thead>
+            <tr>
+            <th scope="col">No</th>
+            <th scope="col">Id</th>
+            <th scope="col">Nama RS / Puskesmas</th>
+            <th scope="col">Nama admin setempat</th>
+            <th scope="col">Username</th>
+            <th scope="col">Password</th>
+            <th scope="col">Alamat</th>
+            <th scope="col">Email RS</th>
+            <th scope="col">AKSI</th>
+            </tr>
+        </thead>
+        <tbody>
+        <?php foreach ($event as $evn) : ?>
+            <tr>
+                <td> <?= $evn['id_akun'] ?> </td>
+                <td> <?= $evn['nama_rs'] ?> </td>
+                <td> <?= $evn['username'] ?> </td>
+                <td> <?= $evn['password'] ?> </td>
+                <td> <?= $evn['alamat_rs'] ?> </td>
+                <td> <?= $evn['email_rs'] ?> </td>
+                <td> <?= $evn['status'] ?> </td>
+                <td>
+                <button type='button' class='btn btn-success'>Ubah</button>
+                <button type='button' class='btn btn-danger'>Hapus</button>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+        </tbody>
     </table>
 </body>
 
