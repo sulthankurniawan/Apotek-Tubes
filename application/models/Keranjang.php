@@ -56,3 +56,5 @@ class Keranjang extends CI_Model{
         }
     }
 }
+
+?>

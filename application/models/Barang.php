@@ -51,3 +51,5 @@ class Barang extends CI_Model{
         }
     }
 }
+
+?>

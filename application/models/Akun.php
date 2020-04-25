@@ -56,3 +56,5 @@ class Akun extends CI_Model{
     }
 
 }
+
+?>
