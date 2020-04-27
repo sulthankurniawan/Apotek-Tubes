@@ -16,7 +16,6 @@
     <table class="table table-striped">
     <thead>
         <tr>
-        <th scope="col">No</th>
         <th scope="col">Id</th>
         <th scope="col">RS pemesan</th>
         <th scope="col">Barang yang dipesan</th>
@@ -27,8 +26,31 @@
         </tr>
     </thead>
     <tbody>
+        <?php foreach ($event as $evn) : ?>
+            <tr>
+                <td> <?= $evn['id_keranjang'] ?> </td>
+                <td> <?= $evn['nama_rs'] ?> </td>
+                <td>
+                    <?php foreach ($event as  $evn) : 
+                    <ol>
+                        <li></li>
+                    </ol>
+                </td>
+                <td> <?= $evn['password'] ?> </td>
+                <td> <?= $evn['alamat_rs'] ?> </td>
+                <td> <?= $evn['email_rs'] ?> </td>
+                <td> <?= $evn['status'] ?> </td>
+                <td>
+                <button type='button' class='btn btn-success'>Kirim</button>
+                <button type='button' class='btn btn-danger'>Tolak</button>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+
+
         <tr>
         <th scope="row">1</th>
+        <td>1</td>
         <td>1</td>
         <td>Al-Islam</td>
         <td>
