@@ -31,10 +31,11 @@
                 <td> <?= $evn['id_keranjang'] ?> </td>
                 <td> <?= $evn['nama_rs'] ?> </td>
                 <td>
-                    <?php foreach ($event as  $evn) : 
-                    <ol>
-                        <li></li>
-                    </ol>
+                    <?php foreach ($event as  $evn) : ?>
+                    <?=<ol>?>
+                        <?=<li>$evn['nama_barang']</li>?>
+                    <?=</ol>?>
+                    <?php endforeach; ?>
                 </td>
                 <td> <?= $evn['password'] ?> </td>
                 <td> <?= $evn['alamat_rs'] ?> </td>

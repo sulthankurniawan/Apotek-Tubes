@@ -16,36 +16,58 @@
 
     <body class="bg-primary">
 
-        <?php include('admin_nav.php'); ?>
+        <?php $this->load->view('admin_nav.php') ?>
 
         <center>
+            <div>
+                <?php if ($this->session->flashdata('success')): ?>
+				<div class="alert alert-success" role="alert">
+					<?php echo $this->session->flashdata('success'); ?>
+				</div>
+				<?php endif; ?>
+            </div>
+
             <div class="col-lg-6">
                 <div class="card" style="margin-top:100px">
-                    <div class="card-header">Registrasi</div>
+                    <div class="card-header">Tambah Barang</div>
                     <div class="card-body card-block">
-                        <form action="" method="post" class="">
+                        <form action="" method="post" class="" enctype="multipart/form-data">
+                            <input type="hidden" name="id" value="<?php echo $barang->id_barang?>" />
+
                             <div class="form-group">
                                 <div class="input-group">
-                                    <input type="text" id="nama_barang" name="nama_barang" class="form-control" placeholder="nama barang">
+                                    <input type="text" id="nama_barang" name="nama_barang" class="form-control <?php echo form_error('nama_barang') ? 'is-invalid':'' ?>" placeholder="nama barang" >
                                 </div>
+                                <div class="invalid-feedback">
+									<?php echo form_error('nama_barang') ?>
+								</div>
                             </div>
                             <div class="form-group">
                                 <div class="input-group">
-                                    <input type="text" id="kategori" name="kategori" class="form-control" placeholder="kategori">
+                                    <input type="text" id="kategori" name="kategori" class="form-control <?php echo form_error('kategori') ? 'is-invalid':'' ?>" placeholder="kategori">
                                 </div>
+                                <div class="invalid-feedback">
+									<?php echo form_error('kategori') ?>
+								</div>
                             </div>
                             <div class="form-group">
                                 <div class="input-group">
-                                    <input type="text" id="gambar" name="gambar" class="form-control" placeholder="gambar">
+                                    <input type="file" id="gambar" name="gambar" class="form-control <?php echo form_error('gambar') ? 'is-invalid':'' ?>" placeholder="gambar">
                                 </div>
+                                <div class="invalid-feedback">
+									<?php echo form_error('gambar') ?>
+								</div>
                             </div>
                             <div class="form-group">
                                 <div class="input-group">
-                                    <input type="email" id="deskripsi" name="deskripsi" class="form-control" placeholder="deskripsi">
+                                    <input type="text" id="deskripsi" name="deskripsi" class="form-control <?php echo form_error('deskripsi') ? 'is-invalid':'' ?>" placeholder="deskripsi">
                                 </div>
+                                <div class="invalid-feedback">
+									<?php echo form_error('deskripsi') ?>
+								</div>
                             </div>
                             <div class="form-actions form-group">
-                                <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+                                <input class="btn btn-primary btn-sm" type="submit" name="btn" value="Save" />
                             </div>
                         </form>
                     </div>

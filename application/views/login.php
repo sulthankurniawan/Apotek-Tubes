@@ -1,11 +1,11 @@
-<!doctype html>
+<!DOCTYPE html>
 <html class="no-js" lang="en"></html>
 
 <html>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Medistock.go - Registrasi</title>
+        <title>Medistock.go - Login</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
@@ -14,35 +14,25 @@
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
     </head>
 
-    <body class="bg-primary">
+    <body class='bg-primary'>
         <center>
             <div class="col-lg-6">
                 <div class="card" style="margin-top:100px">
-                    <div class="card-header">Tambah Barang</div>
+                    <div class="card-header">Login</div>
                     <div class="card-body card-block">
-                        <form action="" method="post" class="">
+                        <form action="<?php echo site_url('login_controller/auth')?>" method="post" class="form-signin">
+                            <?php echo $this->session->flashdata('msg');?>
                             <div class="form-group">
                                 <div class="input-group">
-                                    <input type="text" id="nama_barang" name="nama_barang" class="form-control" placeholder="nama barang" value="<?php echo $barang->nama_barang ?>" >
+                                    <input type="text" id="username" name="username" class="form-control" placeholder="Username" required autofocus>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="input-group">
-                                    <input type="text" id="kategori" name="kategori" class="form-control" placeholder="kategori" value="<?php echo $barang->kategori ?>" >
+                                    <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="input-group">
-                                    <input type="file" id="gambar" name="gambar" class="form-control" placeholder="gambar" value="<?php echo $barang->gambar ?>" >
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="input-group">
-                                    <input type="text" id="deskripsi" name="deskripsi" class="form-control" placeholder="deskripsi">
-                                </div>
-                            </div>
-                            <div class="form-actions form-group">
-                                <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+                            <div class="form-actions form-group" style="margin-top:10px">
+                                <input type="submit" class="btn btn-primary btn-sm"></input>
                             </div>
                         </form>
                     </div>

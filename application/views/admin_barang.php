@@ -13,17 +13,22 @@
 
     <body>
 
-        <?php include('admin_nav.php'); ?>
+        <?php $this->load->view('admin_nav.php') ?>
 
         <div>
             <center>
+                <br>
                 <h3>Admin - Barang</h3>
+                <div class="card-header">
+                    <a href="<?php echo base_url('views/tambah_barang.php') ?>"><i class="fas fa-plus"></i> Tambah Barang</a>
+
+				</div>
                 <br>
             </center>
         </div>
 
         <!--- Cards -->
-        <?php if (empty($event)) : ?>
+        <?php if (empty($barang)) : ?>
             <div class="alert alert-danger" role="alert">
                 Data tidak ditemukan
             </div>
@@ -31,20 +36,20 @@
 
         <div class="container-fluid padding">
             <div class="row padding">
-            <?php foreach ($event as $evn) : ?>
+            <?php foreach ($barang as $item) : ?>
                 <div class="col-md-3">
                     <div class="card">
                         <img class="card-img-top" src="/application/assets/default.png" alt="">
                         <div class="card-body">
-                            <h4 class="card-title"><?= $evn['nama_barang'] ?></h4>
-                            <h6 class="card-title"><?= $evn['kategori'] ?></h6>
-                            <p class="card-text"><?= $evn['deskripsi'] ?></p>
+                            <h4 class="card-title"> <?php echo $item->nama_barang ?> </h4>
+                            <h6 class="card-title"> <?php echo $item->kategori ?> </h6>
+                            <p class="card-text"> <?php echo $item->deskripsi ?> </p>
                             <button class="btn btn-warning" type="button">Edit</button>
                             <button class="btn btn-danger" type="button">Hapus</button>
                         </div>
                     </div>
                 </div>
-            <? endforeach; ?>
+            <?php endforeach; ?>
             </div>
         </div>
         

@@ -63,36 +63,6 @@
 		</div>
 	</div>
 </div>
-
-<!--- Cards -->
-<?php if (empty($event)) : ?>
-    <div class="alert alert-danger" role="alert">
-        Data tidak ditemukan
-    </div>
-<?php endif; ?>
-
-<div class="container-fluid padding">
-    <div class="row padding">
-    <?php foreach ($event as $evn) : ?>
-        <div class="col-md-3">
-            <div class="card">
-                <img class="card-img-top" src="/default.png" alt="">
-                <div class="card-body">
-                    <h4 class="card-title"><?= $evn['nama_barang'] ?></h4>
-                    <h6 class="card-title"><?= $evn['kategori'] ?></h6>
-                    <p class="card-text"><?= $evn['deskripsi'] ?></p>
-                    <button class="btn btn-primary" type="button">Pesan</button>
-                </div>
-            </div>
-        </div>
-    <? endforeach; ?>
-    </div>
-</div>
-
-<!-- include footer -->
-<div>
-	<%- include('partials/footer', {active: "index"}); %>
-</div>
 	
 </body>
 </html>
