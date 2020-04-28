@@ -5,7 +5,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Medistock.go - Update Profil</title>
+        <title>Medistock.go - Registrasi</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
@@ -15,40 +15,33 @@
     </head>
 
     <body class="bg-primary">
+
+        <?php include('admin_nav.php'); ?>
+
         <center>
             <div class="col-lg-6">
                 <div class="card" style="margin-top:100px">
-                    <div class="card-header">Profil</div>
+                    <div class="card-header">Registrasi</div>
                     <div class="card-body card-block">
                         <form action="" method="post" class="">
                             <div class="form-group">
                                 <div class="input-group">
-                                    <input type="text" id="nama_rs" name="nama_rs" class="form-control" placeholder="Nama RS / Puskesmas">
+                                    <input type="text" id="nama_barang" name="nama_barang" class="form-control" placeholder="nama barang">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="input-group">
-                                    <input type="text" id="nama_admin" name="nama_admin" class="form-control" placeholder="Nama Admin RS / Puskesmas">
+                                    <input type="text" id="kategori" name="kategori" class="form-control" placeholder="kategori">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="input-group">
-                                    <input type="text" id="username" name="username" class="form-control" placeholder="Username">
+                                    <input type="text" id="gambar" name="gambar" class="form-control" placeholder="gambar">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="input-group">
-                                    <input type="email" id="password" name="password" class="form-control" placeholder="Password">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="input-group">
-                                    <input type="email" id="alamat" name="alamat" class="form-control" placeholder="Alamat">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="input-group">
-                                    <input type="email" id="email" name="email" class="form-control" placeholder="Email RS / Puskesmas">
+                                    <input type="email" id="deskripsi" name="deskripsi" class="form-control" placeholder="deskripsi">
                                 </div>
                             </div>
                             <div class="form-actions form-group">

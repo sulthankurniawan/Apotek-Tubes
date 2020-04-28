@@ -8,7 +8,7 @@ class adminController extends CI_Controller{
 	}
 	
 	public function login(){
-		$this->load->view('admin_login');
+		$this->load->view('v_login');
 	}
 
 	public function login_masuk(){
@@ -28,7 +28,7 @@ class adminController extends CI_Controller{
 	}
 
 	public function dashboard(){
-		$this->load->view('admin_dashboard');
+		$this->load->view('admin_permintaan');
 	}
 	
 

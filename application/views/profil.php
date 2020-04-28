@@ -20,7 +20,7 @@
                 <div class="card" style="margin-top:100px">
                     <div class="card-header">Profil</div>
                     <div class="card-body card-block">
-                        <form action="" method="post" class="">
+                        <form action="admin_permintaan.php" method="post" class="">
                             <div class="form-group">
                                 <div class="input-group">
                                     <input type="text" id="nama_rs" name="nama_rs" class="form-control" placeholder="Nama RS / Puskesmas">

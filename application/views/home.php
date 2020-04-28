@@ -15,6 +15,8 @@
 <body>	
 
 <!-- include navbar -->
+<?php include('nav.php'); ?>
+
 
 <!--- Image Slider -->
 <center>
@@ -63,48 +65,27 @@
 </div>
 
 <!--- Cards -->
+<?php if (empty($event)) : ?>
+    <div class="alert alert-danger" role="alert">
+        Data tidak ditemukan
+    </div>
+<?php endif; ?>
+
 <div class="container-fluid padding">
     <div class="row padding">
+    <?php foreach ($event as $evn) : ?>
         <div class="col-md-3">
             <div class="card">
-                <img class="card-img-top" src="/1.png" alt="">
-                <div class="cad-body">
-                    <h4 class="card-title">John Doe</h4>
-                    <p class="card-text">John is an Internet enterpreneur with almost 20 years of experience</p>
-                    <!-- <a href="#" class="btn btn-outline-secondary">see profile</a> -->
+                <img class="card-img-top" src="/default.png" alt="">
+                <div class="card-body">
+                    <h4 class="card-title"><?= $evn['nama_barang'] ?></h4>
+                    <h6 class="card-title"><?= $evn['kategori'] ?></h6>
+                    <p class="card-text"><?= $evn['deskripsi'] ?></p>
+                    <button class="btn btn-primary" type="button">Pesan</button>
                 </div>
             </div>
         </div>
-        <div class="col-md-3">
-            <div class="card">
-                <img class="card-img-top" src="/2.png" alt="">
-                <div class="cad-body">
-                    <h4 class="card-title">Mary Jo</h4>
-                    <p class="card-text">Mary Jo is a designer with almost 10 years of digital design experience</p>
-                    <!-- <a href="#" class="btn btn-outline-secondary">see profile</a> -->
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="card">
-                <img class="card-img-top" src="/1.png" alt="">
-                <div class="cad-body">
-                    <h4 class="card-title">Phil Ho</h4>
-                    <p class="card-text">Phil is a developer with over 5 years of web development experience</p>
-                    <!-- <a href="#" class="btn btn-outline-secondary">see profile</a> -->
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="card">
-                <img class="card-img-top" src="/2.png" alt="">
-                <div class="cad-body">
-                    <h4 class="card-title">Phil Ho</h4>
-                    <p class="card-text">Phil is a developer with over 5 years of web development experience</p>
-                    <!-- <a href="#" class="btn btn-outline-secondary">see profile</a> -->
-                </div>
-            </div>
-        </div>
+    <? endforeach; ?>
     </div>
 </div>
 

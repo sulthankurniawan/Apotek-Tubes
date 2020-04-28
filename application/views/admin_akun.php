@@ -13,6 +13,9 @@
 </head>
 
 <body>	
+    
+    <?php include('admin_nav.php'); ?>
+
     <?php if (empty($event)) : ?>
         <div class="alert alert-danger" role="alert">
             Data tidak ditemukan
