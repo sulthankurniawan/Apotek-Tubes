@@ -39,7 +39,10 @@
                             <h4 class="card-title"><?= $evn['nama_barang'] ?></h4>
                             <h6 class="card-title"><?= $evn['kategori'] ?></h6>
                             <p class="card-text"><?= $evn['deskripsi'] ?></p>
-                            <button class="btn btn-primary" type="button">Pesan</button>
+                            <form action="" method="post">
+                                
+                                <input type="submit" class="btn btn-primary btn-sm"></input>
+                            </form>
                         </div>
                     </div>
                 </div>
