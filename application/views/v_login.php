@@ -26,7 +26,7 @@ header("location: v_home.php");
                 <div class="card" style="margin-top:100px">
                     <div class="card-header">Login</div>
                     <div class="card-body card-block">
-                        <form action="" method="post" class="">
+                        <form action="home.php" method="post" class="">
                             <div class="form-group">
                                 <div class="input-group">
                                     <input type="text" id="username" name="username" class="form-control" placeholder="Username">
@@ -37,7 +37,7 @@ header("location: v_home.php");
                                     <input type="password" id="password" name="password" class="form-control" placeholder="Password">
                                 </div>
                             <div class="form-actions form-group" style="margin-top:10px">
-                                <button type="submit" class="btn btn-primary btn-sm">Login</button> 
+                                <input type="submit" class="btn btn-primary btn-sm">Login</input> 
                             </div>
                         </form>
                     </div>

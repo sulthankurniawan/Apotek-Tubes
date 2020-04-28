@@ -13,11 +13,9 @@
 
     <body>
 
-        <?php include('nav.php'); ?>
-
         <div>
             <center>
-                <h3>Semua Barang</h3>
+                <h3>Item yang anda cari</h3>
                 <br>
             </center>
         </div>
@@ -39,10 +37,7 @@
                             <h4 class="card-title"><?= $evn['nama_barang'] ?></h4>
                             <h6 class="card-title"><?= $evn['kategori'] ?></h6>
                             <p class="card-text"><?= $evn['deskripsi'] ?></p>
-                            <form action="" method="post">
-                                
-                                <input type="submit" class="btn btn-primary btn-sm"></input>
-                            </form>
+                            <button class="btn btn-primary" type="button">Pesan</button>
                         </div>
                     </div>
                 </div>
@@ -50,6 +45,7 @@
             </div>
         </div>
         
+
         <!-- jQuery Plugins -->
         <script src="js/jquery.min.js"></script>
         <script src="js/bootstrap.min.js"></script>

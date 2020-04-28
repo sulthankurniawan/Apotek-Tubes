@@ -33,6 +33,12 @@ class Barang extends CI_Model{
 		return $data->result_array();
     }
 
+    public function lihat_barang_kategori($table,$kategori){
+        $this->db->where('kategori',$kategori);
+        $data = $this->db->get($table);
+		return $data->result_array();
+    }
+
     public function hapus_barang($id_barang,$table)
 	{
 		//use query builder to delete data based on id 
