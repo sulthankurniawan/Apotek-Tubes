@@ -13,6 +13,7 @@ class Barang_controller extends CI_Controller{
         $this->load->view("admin_barang", $data);
     }
 
+    
     public function tambah_barang(){
         $barang = $this->Barang_model;
         $validation = $this->form_validation;

@@ -53,9 +53,9 @@ class Barang_model extends CI_Model{
         return $this->db->get_where($this->_table, ["kategori" => $kategori])->row();
     }
 
-    public function hapus_barang($id_barang,$table)
+    public function hapus_barang($id_barang,$_table)
 	{
-		return $this->db->delete($this->_table, array("id_barang" => $id_produk));
+		return $this->db->delete($this->_table, array("id_barang" => $id_barang));
     }
     
     public function edit_barang($table,$id_barang,$data){
