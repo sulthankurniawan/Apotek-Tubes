@@ -1,10 +1,11 @@
-
 <!DOCTYPE html>
+<html class="no-js" lang="en"></html>
+
 <html>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Medistock.go - Login</title>
+        <title>Medistock.go - Registrasi</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
@@ -12,14 +13,24 @@
 
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
     </head>
-	<body class='bg-primary'>
 
+    <body class="bg-primary">
         <center>
             <div class="col-lg-6">
                 <div class="card" style="margin-top:100px">
-                    <div class="card-header">Login</div>
+                    <div class="card-header">Registrasi</div>
                     <div class="card-body card-block">
-                        <form action="home.php" method="post" class="">
+                        <form action="" method="post" class="">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <input type="text" id="nama_rs" name="nama_rs" class="form-control" placeholder="Nama RS / Puskesmas">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <input type="text" id="nama_admin" name="nama_admin" class="form-control" placeholder="Nama Admin RS / Puskesmas">
+                                </div>
+                            </div>
                             <div class="form-group">
                                 <div class="input-group">
                                     <input type="text" id="username" name="username" class="form-control" placeholder="Username">
@@ -27,14 +38,21 @@
                             </div>
                             <div class="form-group">
                                 <div class="input-group">
-                                    <input type="password" id="password" name="password" class="form-control" placeholder="Password">
+                                    <input type="email" id="password" name="password" class="form-control" placeholder="Password">
                                 </div>
-                            <div class="form-actions form-group" style="margin-top:10px">
-
-                                <button type="submit" class="btn btn-primary btn-sm">Login</button> 
-                            
-                                <input type="submit" class="btn btn-primary btn-sm">Login</input> 
-
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <input type="email" id="alamat" name="alamat" class="form-control" placeholder="Alamat">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <input type="email" id="email" name="email" class="form-control" placeholder="Email RS / Puskesmas">
+                                </div>
+                            </div>
+                            <div class="form-actions form-group">
+                                <button type="submit" class="btn btn-primary btn-sm">Submit</button>
                             </div>
                         </form>
                     </div>
